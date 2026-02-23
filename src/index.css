@@ -4,36 +4,61 @@
 
 :root {
     /* Colors - TechPrism (Violet/Innovation Theme) */
-    --bg-dark: #0f172a;
-    --bg-card: #1e293b;
+    --bg-dark: #020617;
+    --bg-card: #0f172a;
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --primary: #8b5cf6;
-    /* Violet-600 */
     --accent: #a78bfa;
-    /* Violet-400 */
     --success: #10b981;
     --warning: #f59e0b;
     --error: #ef4444;
 
+    /* Premium Design Tokens */
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --glass-reflection: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+    --glow-color: rgba(139, 92, 246, 0.3);
+
     /* Typography */
-    --font-family: 'Inter', system-ui, sans-serif;
-
-    /* Layout */
-    --container-width: 1200px;
-    --border-radius: 12px;
-
-    /* Effects */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --glass-bg: rgba(30, 41, 59, 0.7);
-    --glass-border: 1px solid rgba(255, 255, 255, 0.05);
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 
     /* Animations */
-    --transition-fast: 0.15s ease-in-out;
-    --transition-normal: 0.3s ease-in-out;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px var(--glow-color);
+    }
+
+    50% {
+        box-shadow: 0 0 40px var(--glow-color);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glow-pulse 4s ease-in-out infinite;
+}
+
 
 body {
     margin: 0;
