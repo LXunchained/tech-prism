@@ -71,11 +71,10 @@ function Home() {
 
             {/* Audible Affiliate Banner */}
             <motion.section
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                style={{ padding: '3rem 0', position: 'relative', zIndex: 10 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                style={{ padding: '2rem 0', position: 'relative', zIndex: 10 }}
             >
                 <div className="section-container">
                     <a
