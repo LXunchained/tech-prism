@@ -69,6 +69,82 @@ function Home() {
             {/* Products */}
             <div style={{ position: 'relative', zIndex: 10 }}><ProductsGrid /></div>
 
+            {/* Audible Affiliate Banner */}
+            <motion.section
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                style={{ padding: '3rem 0', position: 'relative', zIndex: 10 }}
+            >
+                <div className="section-container">
+                    <a
+                        href="https://amzn.to/4cqtHWZ"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: 'none', display: 'block' }}
+                    >
+                        <div style={{
+                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                            flexWrap: 'wrap', gap: '1.5rem',
+                            padding: '2rem 2.5rem',
+                            borderRadius: '1.25rem',
+                            background: 'linear-gradient(135deg, rgba(255,153,0,0.08) 0%, rgba(255,153,0,0.03) 100%)',
+                            border: '1px solid rgba(255,153,0,0.25)',
+                            backdropFilter: 'blur(12px)',
+                            cursor: 'pointer',
+                            transition: 'border-color 0.2s, box-shadow 0.2s',
+                        }}
+                            onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,153,0,0.55)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(255,153,0,0.08)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,153,0,0.25)'; e.currentTarget.style.boxShadow = 'none'; }}
+                        >
+                            {/* Left */}
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                                <div style={{
+                                    padding: '0.6rem 1.2rem',
+                                    background: '#FF9900',
+                                    borderRadius: '0.5rem',
+                                    fontWeight: 900,
+                                    fontSize: '1.3rem',
+                                    color: '#000',
+                                    letterSpacing: '-0.02em',
+                                    flexShrink: 0,
+                                }}>audible</div>
+                                <div>
+                                    <div style={{
+                                        fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
+                                        fontWeight: 800,
+                                        color: '#fff',
+                                        marginBottom: '0.3rem',
+                                    }}>
+                                        🎧 Try Audible Standard — FREE for 30 days
+                                    </div>
+                                    <div style={{ fontSize: '0.9rem', color: '#94a3b8', fontWeight: 300 }}>
+                                        1 audiobook/month + unlimited ad-free listening. Auto-renews at $8.99/mo. Cancel anytime.
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Right CTA */}
+                            <div style={{
+                                padding: '0.75rem 1.75rem',
+                                background: '#FF9900',
+                                borderRadius: '0.6rem',
+                                fontWeight: 800,
+                                fontSize: '0.95rem',
+                                color: '#000',
+                                whiteSpace: 'nowrap',
+                                flexShrink: 0,
+                            }}>
+                                Start Free Trial →
+                            </div>
+                        </div>
+                        <div style={{ textAlign: 'center', fontSize: '0.7rem', color: '#475569', marginTop: '0.5rem' }}>
+                            Affiliate link — As an Amazon Associate we earn from qualifying purchases.
+                        </div>
+                    </a>
+                </div>
+            </motion.section>
+
             {/* Core Capabilities */}
             <section style={{ padding: '6rem 0', position: 'relative', zIndex: 10 }}>
                 <div className="section-container">
