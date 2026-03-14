@@ -2,43 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://techprismhq.com/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://techprismhq.com/blog</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://techprismhq.com/blog/universal-65w-usb-c-laptop-charger-compatible-with-lenovo-de-review</loc>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://techprismhq.com/blog/apple-earpods-headphones-with-lightning-connector-wired-ear-review</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://techprismhq.com/blog/15x55-uhd-binoculars-for-adults-high-powered-with-phone-adap-review</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://techprismhq.com/blog/anker-usb-c-hub-5-in-1-usbc-to-hdmi-splitter-with-4k-display-review</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://techprismhq.com/blog/fujifilm-instax-mini-instant-film-twin-pack-white-20-photos-review</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://techprismhq.com/blog/wall-charger-surge-protector-qinlianf-5-outlet-extender-with-review</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
