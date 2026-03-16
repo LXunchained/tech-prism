@@ -36,6 +36,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Copy static HTML files into dist
+        run: |
+          cp terms.html dist/terms.html
+          cp privacy.html dist/privacy.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
