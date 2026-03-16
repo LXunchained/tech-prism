@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Terminal, Shield, Zap, ArrowRight, Code, Cpu, Database } from 'lucide-react';
+import { Terminal, Shield, Zap, ArrowRight, Code, Cpu, Database, Video } from 'lucide-react';
 import ProductsGrid from '../components/ProductsGrid';
+import TopPicks from '../components/TopPicks';
 
 const fadeUp = { initial: { opacity: 0, y: 28 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } };
 const stagger = { animate: { transition: { staggerChildren: 0.1 } } };
@@ -13,9 +14,9 @@ const stats = [
 ];
 
 const capabilities = [
-    { title: 'Core Automation', desc: 'Streamline your workflows with our advanced automation frameworks.', icon: Terminal },
-    { title: 'Secure Infra', desc: 'Bulletproof security integration for your digital assets and data.', icon: Shield },
-    { title: 'Neural Scaling', desc: 'Leverage AI and neural networks to scale your operations intelligently.', icon: Zap },
+    { title: 'TikTok Publishing', desc: 'Connect your TikTok account via OAuth and schedule videos to publish automatically — no manual posting needed.', icon: Video, href: '/tiktok-integration' },
+    { title: 'Secure OAuth 2.0', desc: 'Bulletproof OAuth 2.0 + PKCE integration. Your social media passwords are never shared with TechPrism.', icon: Shield, href: null },
+    { title: 'Multi-Platform Automation', desc: 'Publish content across TikTok, YouTube, Instagram, and Pinterest from a single automated pipeline.', icon: Zap, href: null },
 ];
 
 function Home() {
@@ -41,12 +42,12 @@ function Home() {
                     </motion.h1>
 
                     <motion.p variants={fadeUp} style={{ fontSize: 'clamp(1rem, 2.5vw, 1.35rem)', color: '#94a3b8', maxWidth: '40rem', marginBottom: '3rem', fontWeight: 300, lineHeight: 1.7, textAlign: 'center' }}>
-                        Next-generation software solutions and digital automation designed to push the boundaries of what's possible.
+                        Content automation platform for creators — schedule and publish videos to TikTok, YouTube, and more using official APIs.
                     </motion.p>
 
                     <motion.div variants={fadeUp} className="hero-actions">
-                        <button className="hero-btn-primary">Explore Solutions <ArrowRight size={20} /></button>
-                        <button className="hero-btn-secondary">Documentation <Code size={20} /></button>
+                        <a href="/tiktok-integration" className="hero-btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>TikTok Integration <ArrowRight size={20} /></a>
+                        <button className="hero-btn-secondary">Explore Tools <Code size={20} /></button>
                     </motion.div>
                 </div>
             </motion.section>
@@ -144,6 +145,9 @@ function Home() {
                 </div>
             </motion.section>
 
+            {/* Top Picks — AI Affiliate */}
+            <div style={{ position: 'relative', zIndex: 10 }}><TopPicks /></div>
+
             {/* Core Capabilities */}
             <section style={{ padding: '6rem 0', position: 'relative', zIndex: 10 }}>
                 <div className="section-container">
@@ -159,6 +163,7 @@ function Home() {
                                 <div className="capability-icon-wrap"><cap.icon size={26} color="#8b5cf6" /></div>
                                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '0.75rem' }}>{cap.title}</h3>
                                 <p style={{ color: '#94a3b8', fontWeight: 300, lineHeight: 1.7 }}>{cap.desc}</p>
+                                {cap.href && <a href={cap.href} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#a78bfa', fontSize: '0.9rem', fontWeight: 600, marginTop: '1rem', textDecoration: 'none' }}>Learn more <ArrowRight size={14} /></a>}
                             </motion.div>
                         ))}
                     </div>

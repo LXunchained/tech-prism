@@ -14,9 +14,9 @@ function Header() {
                 </Link>
 
                 <nav className="navbar-nav">
-                    <Link to="/">Solutions</Link>
-                    <Link to="/">Innovation</Link>
-                    <Link to="/">About</Link>
+                    <Link to="/">Deals</Link>
+                    <Link to="/comparatifs">Outils IA</Link>
+                    <Link to="/blog">Blog</Link>
                 </nav>
 
                 <div className="navbar-actions">

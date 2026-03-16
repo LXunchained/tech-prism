@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | TechPrism</title>
-  <meta name="description" content="TechPrism Privacy Policy — how we collect, use, and protect your information." />
+  <meta name="description" content="TechPrism Privacy Policy — how we collect, use, and protect your information including TikTok integration data." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -39,6 +39,7 @@
       font-weight: 800;
       background: linear-gradient(135deg, #00d4ff, #a855f7);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 0.4rem;
     }
@@ -61,6 +62,13 @@
       border-top: 1px solid #2a2a4a;
       margin: 2.5rem 0;
     }
+    .highlight-box {
+      background: rgba(0, 212, 255, 0.06);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0 1.5rem;
+    }
     footer {
       text-align: center;
       padding: 1.5rem;
@@ -79,58 +87,79 @@
 
 <div class="container">
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: March 6, 2026</p>
+  <p class="updated">Last updated: March 16, 2026</p>
 
-  <p>TechPrism ("we", "our", or "us") operates the website <a href="https://techprismhq.com">techprismhq.com</a> and associated social media accounts. This Privacy Policy explains how we collect, use, and protect information when you use our services.</p>
+  <p>TechPrism ("we", "our", or "us") operates the website <a href="https://techprismhq.com">techprismhq.com</a> and associated services. This Privacy Policy explains how we collect, use, and protect information when you use our content automation platform.</p>
 
   <hr class="divider" />
 
   <h2>1. Information We Collect</h2>
-  <p>We collect minimal information necessary to operate our service:</p>
+  <p>We collect the following types of information:</p>
   <ul>
     <li><strong>Usage Data:</strong> Pages visited, time spent, referral URLs (via standard web analytics).</li>
     <li><strong>Cookies:</strong> Small files stored by your browser to remember preferences. You may disable cookies in your browser settings.</li>
-    <li><strong>Affiliate Click Data:</strong> When you click an Amazon affiliate link, Amazon may collect data per their own privacy policy.</li>
+    <li><strong>Connected Account Data:</strong> When you connect a social media account (e.g. TikTok) via OAuth, we receive and store an access token and a platform-assigned user identifier (e.g. TikTok <code>open_id</code>) to authenticate API requests on your behalf.</li>
+    <li><strong>Affiliate Click Data:</strong> When you click an affiliate link, the merchant (e.g. Amazon) may collect data per their own privacy policy.</li>
   </ul>
-  <p>We do <strong>not</strong> collect your name, email, or payment information directly.</p>
+  <p>We do <strong>not</strong> collect your social media passwords. All account connections use official OAuth 2.0 authorization flows.</p>
 
-  <h2>2. How We Use Information</h2>
+  <h2>2. TikTok Integration — Detailed Data Practices</h2>
+  <div class="highlight-box">
+    <p>When you authorize TechPrism to connect to your TikTok account, the following data practices apply:</p>
+    <ul>
+      <li><strong>Data Collected:</strong>
+        <ul>
+          <li>TikTok OAuth access token and refresh token</li>
+          <li>TikTok <code>open_id</code> (a platform-assigned anonymous identifier — not your username or personal data)</li>
+          <li>Upload and publish status responses from TikTok's API</li>
+          <li>Basic profile info (display name, avatar URL) via <code>user.info.basic</code> scope — used solely to display your account in the TechPrism dashboard</li>
+        </ul>
+      </li>
+      <li><strong>How It's Used:</strong> TikTok data is used exclusively to fulfill your scheduled publishing requests within TechPrism. We do not use it for advertising, profiling, or sale to third parties.</li>
+      <li><strong>Data Storage:</strong> Tokens are stored securely and encrypted at rest. They are never shared with third parties.</li>
+      <li><strong>Retention:</strong> Token data is retained as long as your TikTok connection is active. It is deleted when you disconnect your account.</li>
+      <li><strong>Revoking Access:</strong> You can revoke TechPrism's access to your TikTok account at any time via <a href="https://www.tiktok.com/setting" target="_blank">TikTok Settings → Manage Apps</a>. You can also contact us at <a href="mailto:privacy@techprismhq.com">privacy@techprismhq.com</a> to request deletion.</li>
+      <li><strong>TikTok's Privacy Policy:</strong> Your use of TikTok is also governed by <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank">TikTok's Privacy Policy</a>.</li>
+    </ul>
+  </div>
+
+  <h2>3. How We Use Information</h2>
   <ul>
-    <li>To analyze website traffic and improve content</li>
-    <li>To understand which products and deals are most relevant to visitors</li>
+    <li>To authenticate and execute content publishing actions on your behalf on connected platforms</li>
+    <li>To analyze website traffic and improve our content and tools</li>
+    <li>To track which affiliate products are most relevant to our audience</li>
     <li>To maintain and improve the TechPrism platform</li>
   </ul>
 
-  <h2>3. Amazon Affiliate Disclosure</h2>
-  <p>TechPrism is a participant in the <strong>Amazon Services LLC Associates Program</strong>, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
-  <p>When you click an affiliate link and make a purchase, we may earn a small commission at <strong>no extra cost to you</strong>. Prices and availability shown are accurate at time of posting and may change.</p>
+  <h2>4. Affiliate Disclosure</h2>
+  <p>TechPrism is a participant in the <strong>Amazon Services LLC Associates Program</strong>, an affiliate advertising program. When you click an affiliate link and make a purchase, we may earn a small commission at <strong>no extra cost to you</strong>.</p>
 
-  <h2>4. Third-Party Services</h2>
-  <p>We use the following third-party services that may collect data independently:</p>
+  <h2>5. Third-Party Services</h2>
+  <p>We integrate with or link to the following third-party services that may collect data independently:</p>
   <ul>
+    <li><strong>TikTok:</strong> Content publishing via API — <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank">TikTok Privacy Policy</a></li>
     <li><strong>Amazon Associates:</strong> Affiliate tracking — <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496" target="_blank">Amazon Privacy Policy</a></li>
-    <li><strong>Meta (Facebook / Instagram):</strong> Social content distribution</li>
     <li><strong>YouTube / Google:</strong> Video hosting and analytics</li>
-    <li><strong>TikTok:</strong> Short-form video distribution</li>
+    <li><strong>Pinterest:</strong> Content distribution</li>
     <li><strong>GitHub Pages:</strong> Website hosting</li>
   </ul>
 
-  <h2>5. Cookies</h2>
+  <h2>6. Cookies</h2>
   <p>We use cookies for analytics and affiliate link attribution. By using this site, you consent to the use of cookies in accordance with this policy. You can control cookies through your browser's settings.</p>
 
-  <h2>6. Data Retention</h2>
-  <p>We do not store personal data on our servers. Any analytics data is retained only as long as necessary to understand usage trends, typically no longer than 26 months.</p>
+  <h2>7. Data Retention</h2>
+  <p>Analytics data is retained for up to 26 months. Connected account tokens (e.g. TikTok) are retained until the connection is revoked or your account is deleted. We do not store personal data beyond what is necessary to provide our services.</p>
 
-  <h2>7. Children's Privacy</h2>
+  <h2>8. Children's Privacy</h2>
   <p>TechPrism is not directed at children under 13. We do not knowingly collect data from children. If you believe a child has provided us with personal information, please contact us.</p>
 
-  <h2>8. Your Rights</h2>
-  <p>Depending on your jurisdiction, you may have rights including access to, correction of, or deletion of your personal data. To exercise these rights, contact us at the email below.</p>
+  <h2>9. Your Rights</h2>
+  <p>Depending on your jurisdiction, you may have rights including access to, correction of, or deletion of your personal data. To exercise these rights, contact us at the email below. For TikTok-specific data deletion, you may also revoke access directly through TikTok's app settings.</p>
 
-  <h2>9. Changes to This Policy</h2>
+  <h2>10. Changes to This Policy</h2>
   <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of the site after changes constitutes acceptance.</p>
 
-  <h2>10. Contact</h2>
+  <h2>11. Contact</h2>
   <p>For privacy-related inquiries, contact us at: <a href="mailto:privacy@techprismhq.com">privacy@techprismhq.com</a></p>
 </div>
 
