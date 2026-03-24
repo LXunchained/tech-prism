@@ -37,7 +37,7 @@ export default function Comparatifs() {
                         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginTop: '2rem' }}>
                             {[
                                 { label: 'Outils testés', value: String(aiTools.length) },
-                                { label: 'Commission max', value: Math.max(...aiTools.map(t => parseFloat(t.commission))) + '%' },
+                                { label: 'Commission max', value: (() => { const pcts = aiTools.map(t => parseFloat(t.commission)).filter(n => !isNaN(n)); return pcts.length ? Math.max(...pcts) + '%' : '—'; })() },
                                 { label: 'Essais gratuits', value: aiTools.filter(t => t.hasFreeTrial).length + '/' + aiTools.length },
                             ].map(s => (
                                 <div key={s.label} style={{ textAlign: 'center' }}>

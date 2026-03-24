@@ -341,6 +341,70 @@ export const aiTools = [
         ],
         verdict: 'PLR Funnels est idéal pour les marketeurs qui veulent vendre des produits digitaux sans repartir de zéro. Les droits PLR permettent de personnaliser et revendre les funnels. Commission 40% sur $97 = $38 par vente.',
     },
+    {
+        slug: 'hostinger',
+        name: 'Hostinger',
+        tagline: 'Web hosting ultra-rapide à partir de $2.99/mo — idéal pour lancer un site ou un business en ligne.',
+        logo: '🌐',
+        category: 'hosting',
+        affiliateUrl: 'https://www.hostinger.com?REFERRALCODE=AEDLOUISBPRC',
+        commission: '60%',
+        commissionType: 'one-time',
+        rating: 4.7,
+        reviewCount: 18000,
+        price: '$2.99/mo',
+        hasFreeTrial: false,
+        badge: 'top-pick',
+        pros: [
+            'Prix imbattable — à partir de $2.99/mo',
+            'Performances LiteSpeed ultra-rapides',
+            'Nom de domaine gratuit inclus la première année',
+            'Support 24/7 et interface hPanel très intuitive',
+            'VPS puissants à partir de $5.99/mo',
+        ],
+        cons: [
+            'Prix bas uniquement sur les engagements longs (48 mois)',
+            'Pas de support téléphonique',
+        ],
+        pricingTiers: [
+            { name: 'Premium Shared', price: '$2.99/mo', features: '100 sites, 100GB SSD, domaine gratuit, SSL' },
+            { name: 'Business', price: '$3.99/mo', features: '100 sites, 200GB NVMe, CDN, backups quotidiens' },
+            { name: 'Cloud Startup', price: '$9.99/mo', features: '300GB SSD, 3GB RAM, IP dédiée, performances cloud' },
+        ],
+        verdict: 'Hostinger est le meilleur hébergeur rapport qualité/prix en 2026. Idéal pour les créateurs, freelancers, et entrepreneurs qui veulent lancer un site rapidement sans exploser leur budget. La commission pouvant atteindre 60% en fait l\'un des programmes affiliés hébergement les plus rentables.',
+    },
+    {
+        slug: 'digitalocean',
+        name: 'DigitalOcean',
+        tagline: 'Cloud hosting simple et puissant pour développeurs — Droplets, Kubernetes, App Platform.',
+        logo: '🐳',
+        category: 'hosting',
+        affiliateUrl: 'https://m.do.co/c/530ad6a41e3f',
+        commission: '$200',
+        commissionType: 'one-time',
+        rating: 4.6,
+        reviewCount: 14500,
+        price: '$4/mo',
+        hasFreeTrial: true,
+        badge: 'recommended',
+        pros: [
+            '$200 de crédit gratuit pour les nouveaux utilisateurs',
+            'Interface simple vs AWS/GCP — idéal pour devs indépendants',
+            'Droplets (VPS) à partir de $4/mo',
+            'Documentation et tutoriels exceptionnels',
+            'Kubernetes managé, App Platform, Databases',
+        ],
+        cons: [
+            'Moins de services que AWS/Azure pour les grandes entreprises',
+            'Support premium payant ($24/mo)',
+        ],
+        pricingTiers: [
+            { name: 'Basic Droplet', price: '$4/mo', features: '512MB RAM, 10GB SSD, 500GB transfer' },
+            { name: 'Regular Droplet', price: '$12/mo', features: '2GB RAM, 50GB SSD, 2TB transfer' },
+            { name: 'CPU-Optimized', price: '$42/mo', features: '4GB RAM, 25GB NVMe, dedicated vCPUs' },
+        ],
+        verdict: 'DigitalOcean est la plateforme cloud de référence pour les développeurs indépendants et les startups. Son interface simple, sa documentation de qualité supérieure et ses prix transparents en font le choix numéro 1 pour déployer des apps, APIs et sites web. Le programme de parrainage offre $200 de crédit aux nouveaux utilisateurs.',
+    },
 ];
 
 export const getToolBySlug = (slug) => aiTools.find(t => t.slug === slug) || null;
@@ -350,6 +414,7 @@ export const getToolsByCategory = (category) =>
 
 export const categories = [
     { id: 'all', label: 'Tous les outils' },
+    { id: 'hosting', label: 'Hosting & Cloud' },
     { id: 'ai-writing', label: 'IA Writing' },
     { id: 'ai-video', label: 'IA Vidéo' },
     { id: 'seo', label: 'SEO' },

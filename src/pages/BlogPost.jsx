@@ -131,7 +131,7 @@ export default function BlogPost() {
                     {/* Affiliate CTA */}
                     <div className="blogpost-cta-bar">
                         <div className="blogpost-cta-info">
-                            <span className="blogpost-cta-label">Best price on Amazon</span>
+                        <span className="blogpost-cta-label">{affLink.includes('amazon') ? 'Best price on Amazon' : 'Exclusive deal'}</span>
                             {post.price > 0 && (
                                 <span className="blogpost-cta-price">${Number(post.price).toFixed(2)}</span>
                             )}
@@ -144,7 +144,7 @@ export default function BlogPost() {
                             id="affiliate-cta-top"
                         >
                             <ShoppingCart size={16} />
-                            Buy on Amazon
+                            {affLink.includes('amazon') ? 'Buy on Amazon' : 'Get the Deal'}
                             <ExternalLink size={13} />
                         </a>
                     </div>
@@ -166,7 +166,7 @@ export default function BlogPost() {
                             id="affiliate-cta-bottom"
                         >
                             <ShoppingCart size={16} />
-                            Check Price on Amazon →
+                            {affLink.includes('amazon') ? 'Check Price on Amazon →' : 'View Deal →'}
                         </a>
                         <p className="blogpost-disclaimer">
                             <em>

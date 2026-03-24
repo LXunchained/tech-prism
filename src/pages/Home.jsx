@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Terminal, Shield, Zap, ArrowRight, Code, Cpu, Database, Video } from 'lucide-react';
+import { Terminal, Shield, Zap, ArrowRight, Code, Cpu, Database, Video, TrendingUp, BarChart3, Bot } from 'lucide-react';
 import ProductsGrid from '../components/ProductsGrid';
 import TopPicks from '../components/TopPicks';
 
@@ -7,16 +8,16 @@ const fadeUp = { initial: { opacity: 0, y: 28 }, animate: { opacity: 1, y: 0 }, 
 const stagger = { animate: { transition: { staggerChildren: 0.1 } } };
 
 const stats = [
-    { label: 'Latency', value: '1.2ms', icon: Zap },
-    { label: 'Efficiency', value: '99.9%', icon: Cpu },
-    { label: 'Security', value: 'Level 4', icon: Shield },
-    { label: 'Scaling', value: 'Infinite', icon: Database },
+    { label: 'Live Bot', value: '24/7', icon: Bot },
+    { label: 'AI Tools', value: '13+', icon: Cpu },
+    { label: 'Strategies', value: '4', icon: BarChart3 },
+    { label: 'Trust Score', value: '4.8/5', icon: Shield },
 ];
 
 const capabilities = [
-    { title: 'TikTok Publishing', desc: 'Connect your TikTok account via OAuth and schedule videos to publish automatically — no manual posting needed.', icon: Video, href: '/tiktok-integration' },
-    { title: 'Secure OAuth 2.0', desc: 'Bulletproof OAuth 2.0 + PKCE integration. Your social media passwords are never shared with TechPrism.', icon: Shield, href: null },
-    { title: 'Multi-Platform Automation', desc: 'Publish content across TikTok, YouTube, Instagram, and Pinterest from a single automated pipeline.', icon: Zap, href: null },
+    { title: 'Algorithmic Trading Bot', desc: 'Our EMA Crossover v3 bot trades BTC & ETH 24/7 with 12-point signal scoring, 4H multi-timeframe confirmation, and smart position sizing.', icon: TrendingUp, href: '/trading' },
+    { title: 'AI-Powered Tools', desc: 'Curated directory of the best AI tools for content creation, SEO, design, and marketing — all tested and reviewed by our team.', icon: Cpu, href: '/comparatifs' },
+    { title: 'Trading Guides & Education', desc: 'From EMA crossovers to risk management — our guides teach you the strategies behind the bot so you can trade smarter.', icon: BarChart3, href: '/trading/guides' },
 ];
 
 function Home() {
@@ -34,7 +35,7 @@ function Home() {
                 <div className="section-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <motion.div variants={fadeUp} className="animate-glow" style={{ marginBottom: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 1rem', borderRadius: '9999px', background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.25)', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#a78bfa' }}>
                         <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#8b5cf6', display: 'inline-block' }} />
-                        Accelerating Digital Evolution
+                        Accelerating Digital Performance
                     </motion.div>
 
                     <motion.h1 variants={fadeUp} style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)', fontWeight: 900, letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: '1.5rem', background: 'linear-gradient(135deg, #fff 40%, #a78bfa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
@@ -42,12 +43,12 @@ function Home() {
                     </motion.h1>
 
                     <motion.p variants={fadeUp} style={{ fontSize: 'clamp(1rem, 2.5vw, 1.35rem)', color: '#94a3b8', maxWidth: '40rem', marginBottom: '3rem', fontWeight: 300, lineHeight: 1.7, textAlign: 'center' }}>
-                        Content automation platform for creators — schedule and publish videos to TikTok, YouTube, and more using official APIs.
+                        Tech tools, AI reviews, and a live crypto trading bot — all in one platform. Discover, trade, and grow.
                     </motion.p>
 
                     <motion.div variants={fadeUp} className="hero-actions">
-                        <a href="/tiktok-integration" className="hero-btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>TikTok Integration <ArrowRight size={20} /></a>
-                        <button className="hero-btn-secondary">Explore Tools <Code size={20} /></button>
+                        <a href="/trading" className="hero-btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>Trading Hub <TrendingUp size={20} /></a>
+                        <Link to="/comparatifs" className="hero-btn-secondary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>AI Tools <Code size={20} /></Link>
                     </motion.div>
                 </div>
             </motion.section>
@@ -145,6 +146,152 @@ function Home() {
                 </div>
             </motion.section>
 
+            {/* Hostinger Affiliate Banner */}
+            <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                style={{ padding: '1rem 0', position: 'relative', zIndex: 10 }}
+            >
+                <div className="section-container">
+                    <a
+                        href="https://www.hostinger.com?REFERRALCODE=AEDLOUISBPRC"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: 'none', display: 'block' }}
+                    >
+                        <div style={{
+                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                            flexWrap: 'wrap', gap: '1.5rem',
+                            padding: '2rem 2.5rem',
+                            borderRadius: '1.25rem',
+                            background: 'linear-gradient(135deg, rgba(103,58,183,0.08) 0%, rgba(156,39,176,0.03) 100%)',
+                            border: '1px solid rgba(103,58,183,0.25)',
+                            backdropFilter: 'blur(12px)',
+                            cursor: 'pointer',
+                            transition: 'border-color 0.2s, box-shadow 0.2s',
+                        }}
+                            onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(103,58,183,0.55)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(103,58,183,0.08)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(103,58,183,0.25)'; e.currentTarget.style.boxShadow = 'none'; }}
+                        >
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                                <div style={{
+                                    padding: '0.6rem 1.2rem',
+                                    background: 'linear-gradient(135deg, #673AB7, #9C27B0)',
+                                    borderRadius: '0.5rem',
+                                    fontWeight: 900,
+                                    fontSize: '1.1rem',
+                                    color: '#fff',
+                                    letterSpacing: '-0.02em',
+                                    flexShrink: 0,
+                                }}>🌐 Hostinger</div>
+                                <div>
+                                    <div style={{
+                                        fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
+                                        fontWeight: 800,
+                                        color: '#fff',
+                                        marginBottom: '0.3rem',
+                                    }}>
+                                        🚀 Web Hosting from $2.99/mo — Free Domain Included
+                                    </div>
+                                    <div style={{ fontSize: '0.9rem', color: '#94a3b8', fontWeight: 300 }}>
+                                        LiteSpeed servers, free SSL, AI website builder. Used by 30M+ websites worldwide.
+                                    </div>
+                                </div>
+                            </div>
+                            <div style={{
+                                padding: '0.75rem 1.75rem',
+                                background: 'linear-gradient(135deg, #673AB7, #9C27B0)',
+                                borderRadius: '0.6rem',
+                                fontWeight: 800,
+                                fontSize: '0.95rem',
+                                color: '#fff',
+                                whiteSpace: 'nowrap',
+                                flexShrink: 0,
+                            }}>
+                                Get Started →
+                            </div>
+                        </div>
+                        <div style={{ textAlign: 'center', fontSize: '0.7rem', color: '#475569', marginTop: '0.5rem' }}>
+                            <strong>Affiliate Disclosure:</strong> TechPrism participates in affiliate programs from OKX, TradingView, Hostinger, DigitalOcean, and other companies. Some links on this site are affiliate links — purchases made through these links support our work at no extra cost to you.
+                        </div>
+                    </a>
+                </div>
+            </motion.section>
+
+            {/* DigitalOcean Affiliate Banner */}
+            <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                style={{ padding: '1rem 0', position: 'relative', zIndex: 10 }}
+            >
+                <div className="section-container">
+                    <a
+                        href="https://m.do.co/c/530ad6a41e3f"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: 'none', display: 'block' }}
+                    >
+                        <div style={{
+                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                            flexWrap: 'wrap', gap: '1.5rem',
+                            padding: '2rem 2.5rem',
+                            borderRadius: '1.25rem',
+                            background: 'linear-gradient(135deg, rgba(0,105,225,0.08) 0%, rgba(0,105,225,0.03) 100%)',
+                            border: '1px solid rgba(0,105,225,0.25)',
+                            backdropFilter: 'blur(12px)',
+                            cursor: 'pointer',
+                            transition: 'border-color 0.2s, box-shadow 0.2s',
+                        }}
+                            onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(0,105,225,0.55)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(0,105,225,0.08)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(0,105,225,0.25)'; e.currentTarget.style.boxShadow = 'none'; }}
+                        >
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                                <div style={{
+                                    padding: '0.6rem 1.2rem',
+                                    background: '#0069E1',
+                                    borderRadius: '0.5rem',
+                                    fontWeight: 900,
+                                    fontSize: '1.1rem',
+                                    color: '#fff',
+                                    letterSpacing: '-0.02em',
+                                    flexShrink: 0,
+                                }}>🐳 DigitalOcean</div>
+                                <div>
+                                    <div style={{
+                                        fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
+                                        fontWeight: 800,
+                                        color: '#fff',
+                                        marginBottom: '0.3rem',
+                                    }}>
+                                        ☁️ Get $200 in Free Credits — Cloud Hosting for Developers
+                                    </div>
+                                    <div style={{ fontSize: '0.9rem', color: '#94a3b8', fontWeight: 300 }}>
+                                        Deploy Droplets (VPS), managed Kubernetes, databases & more. Simple, scalable, developer-first.
+                                    </div>
+                                </div>
+                            </div>
+                            <div style={{
+                                padding: '0.75rem 1.75rem',
+                                background: '#0069E1',
+                                borderRadius: '0.6rem',
+                                fontWeight: 800,
+                                fontSize: '0.95rem',
+                                color: '#fff',
+                                whiteSpace: 'nowrap',
+                                flexShrink: 0,
+                            }}>
+                                Claim $200 Free →
+                            </div>
+                        </div>
+                        <div style={{ textAlign: 'center', fontSize: '0.7rem', color: '#475569', marginTop: '0.5rem' }}>
+                            Affiliate link — sign up to receive $200 in free credits over 60 days.
+                        </div>
+                    </a>
+                </div>
+            </motion.section>
+
             {/* Top Picks — AI Affiliate */}
             <div style={{ position: 'relative', zIndex: 10 }}><TopPicks /></div>
 
@@ -152,9 +299,9 @@ function Home() {
             <section style={{ padding: '6rem 0', position: 'relative', zIndex: 10 }}>
                 <div className="section-container">
                     <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-                        <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, letterSpacing: '-0.03em', marginBottom: '1rem' }}>Core Capabilities</h2>
+                        <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, letterSpacing: '-0.03em', marginBottom: '1rem' }}>What We Do</h2>
                         <p style={{ color: '#94a3b8', maxWidth: '32rem', margin: '0 auto', fontSize: '1.05rem', fontWeight: 300 }}>
-                            Architecting the future through precision engineering and <span style={{ color: '#a78bfa', fontWeight: 500 }}>neural-driven automation.</span>
+                            Combining <span style={{ color: '#34d399', fontWeight: 500 }}>automated trading</span> with curated <span style={{ color: '#a78bfa', fontWeight: 500 }}>tech tools</span> to grow your digital edge.
                         </p>
                     </div>
                     <div className="capabilities-grid">
@@ -181,8 +328,8 @@ function Home() {
                         <p style={{ color: '#94a3b8', fontSize: '1.1rem', marginBottom: '2.5rem', fontWeight: 300, maxWidth: '30rem', margin: '0 auto 2.5rem', position: 'relative', zIndex: 1 }}>
                             Join the next generation of digital pioneers scaling their infrastructure with precision tools.
                         </p>
-                        <button className="hero-btn-primary" style={{ position: 'relative', zIndex: 1 }}>
-                            Initialise System <Zap size={18} />
+                        <button className="hero-btn-primary" style={{ position: 'relative', zIndex: 1 }} onClick={() => window.location.href='/trading'}>
+                            Explore The Bot <TrendingUp size={18} />
                         </button>
                     </motion.div>
                 </div>

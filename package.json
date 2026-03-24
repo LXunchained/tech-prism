@@ -14,7 +14,7 @@
         "lint": "eslint .",
         "preview": "vite preview",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist --repo https://github.com/LXunchained/tech-prism.git"
+        "deploy": "gh-pages -d dist --repo https://github.com/LXunchained/tech-prism.git --dotfiles"
     },
     "dependencies": {
         "framer-motion": "^12.34.0",
