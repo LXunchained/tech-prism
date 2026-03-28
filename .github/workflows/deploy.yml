@@ -40,7 +40,8 @@ jobs:
         run: |
           cp terms.html dist/terms.html
           cp privacy.html dist/privacy.html
-
+          cp dist/index.html dist/404.html
+          
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
