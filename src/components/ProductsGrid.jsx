@@ -31,11 +31,19 @@ function ProductCard({ product, idx }) {
     );
 }
 
-const ProductsGrid = () => {
+const ProductsGrid = ({ brandFilter = 'tech' }) => {
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
 
-    const filtered = products.filter(p => {
+    const brandProducts = products.filter(p => {
+        const id = p.id || '';
+        if (brandFilter === 'aura' && id.startsWith('aura-')) return true;
+        if (brandFilter === 'core' && id.startsWith('core-')) return true;
+        if (brandFilter === 'tech' && (!id.startsWith('aura-') && !id.startsWith('core-'))) return true;
+        return false;
+    });
+
+    const filtered = brandProducts.filter(p => {
         const matchCat = filter === 'all' || p.category === filter;
         const matchSearch = p.title.toLowerCase().includes(search.toLowerCase()) ||
             (p.subtitle || '').toLowerCase().includes(search.toLowerCase());
@@ -44,7 +52,7 @@ const ProductsGrid = () => {
 
     // Count per category for badges
     const counts = {};
-    products.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+    brandProducts.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
 
     return (
         <section style={{ padding: '5rem 0', position: 'relative', zIndex: 10 }}>
@@ -65,7 +73,7 @@ const ProductsGrid = () => {
                 {/* Category filter pills */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '2.5rem' }}>
                     {categories.map(cat => {
-                        const count = cat.id === 'all' ? products.length : (counts[cat.id] || 0);
+                        const count = cat.id === 'all' ? brandProducts.length : (counts[cat.id] || 0);
                         return (
                             <button
                                 key={cat.id}

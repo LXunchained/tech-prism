@@ -13,6 +13,7 @@ import TradingHub from './pages/TradingHub'
 import TradingCalculator from './pages/TradingCalculator'
 import TradingJournal from './pages/TradingJournal'
 import TradingGuides from './pages/TradingGuides'
+import BrandPage from './pages/BrandPage'
 
 function App() {
     return (
@@ -22,6 +23,8 @@ function App() {
             <main>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/aura" element={<BrandPage brand="aura" title="AuraPrism" subtitle="Curated Beauty & Lifestyle Essentials." color="#f472b6" glowStart="rgba(244,114,182,0.06)" glowEnd="rgba(244,114,182,0.03)" />} />
+                    <Route path="/core" element={<BrandPage brand="core" title="CorePrism" subtitle="General Finds & Home Essentials." color="#fbbf24" glowStart="rgba(251,191,36,0.06)" glowEnd="rgba(251,191,36,0.03)" />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:slug" element={<BlogPost />} />
                     <Route path="/go/:slug" element={<GoRedirect />} />

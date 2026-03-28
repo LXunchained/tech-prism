@@ -1,34 +1,42 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Zap, Shield, Coins, LayoutGrid } from 'lucide-react';
+import { ChevronDown, Zap, Shield, Home, LayoutGrid } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const brands = [
     {
-        name: "Richesse Souveraine",
-        domain: "https://richesse-souveraine.com",
-        color: "text-emerald-400",
-        icon: Coins,
-        desc: "Liberté financière"
-    },
-    {
-        name: "Héritage & Sagesse",
-        domain: "https://heritage-sagesse.com",
-        color: "text-amber-400",
+        name: "AuraPrism",
+        domain: "/aura",
+        color: "text-pink-400",
+        bg: "bg-pink-500/10",
         icon: Shield,
-        desc: "Croissance personnelle"
+        desc: "Beauty & Lifestyle"
     },
     {
-        name: "TechPrism HQ",
-        domain: "https://techprismhq.com",
+        name: "CorePrism",
+        domain: "/core",
+        color: "text-amber-400",
+        bg: "bg-amber-500/10",
+        icon: Home,
+        desc: "General & Home"
+    },
+    {
+        name: "TechPrism",
+        domain: "/",
         color: "text-violet-400",
+        bg: "bg-violet-500/10",
         icon: Zap,
-        desc: "Innovation tech"
+        desc: "Tech Innovation"
     }
 ];
 
 const VaultSwitcher = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
+    // Reorder brands to show the active one first or hide it? 
+    // Just show all. But let's highlight active.
+    
     return (
         <div className="relative">
             <button
@@ -36,7 +44,7 @@ const VaultSwitcher = () => {
                 className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
             >
                 <LayoutGrid size={16} className="text-slate-400 group-hover:text-white transition-colors" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-white">The Vault</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-white">Universe</span>
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
             </button>
 
@@ -54,24 +62,25 @@ const VaultSwitcher = () => {
                             className="absolute right-0 mt-3 w-72 bg-[#0f172a]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-2 z-50 overflow-hidden"
                         >
                             <div className="px-3 py-2 mb-2">
-                                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">Select Universe</span>
+                                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">Select Brand</span>
                             </div>
 
                             <div className="space-y-1">
                                 {brands.map((brand) => (
-                                    <a
+                                    <Link
                                         key={brand.name}
-                                        href={brand.domain}
-                                        className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-all group"
+                                        to={brand.domain}
+                                        onClick={() => setIsOpen(false)}
+                                        className={`flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 transition-all group ${location.pathname === brand.domain ? 'bg-white/5 border border-white/10' : ''}`}
                                     >
-                                        <div className={`p-2 rounded-lg bg-white/5 group-hover:scale-110 transition-transform ${brand.color}`}>
+                                        <div className={`p-2 rounded-lg ${brand.bg} group-hover:scale-110 transition-transform ${brand.color}`}>
                                             <brand.icon size={18} />
                                         </div>
                                         <div className="flex flex-col">
-                                            <span className="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">{brand.name}</span>
+                                            <span className="text-sm font-bold text-white transition-colors">{brand.name}</span>
                                             <span className="text-[10px] text-slate-500 font-medium">{brand.desc}</span>
                                         </div>
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
 
