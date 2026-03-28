@@ -9,10 +9,6 @@ import ReviewDetail from './pages/ReviewDetail'
 import TikTokIntegration from './pages/TikTokIntegration'
 import TikTokCallback from './pages/TikTokCallback'
 import ExitIntentPopup from './components/ExitIntentPopup'
-import TradingHub from './pages/TradingHub'
-import TradingCalculator from './pages/TradingCalculator'
-import TradingJournal from './pages/TradingJournal'
-import TradingGuides from './pages/TradingGuides'
 import BrandPage from './pages/BrandPage'
 
 function App() {
@@ -33,11 +29,6 @@ function App() {
                     <Route path="/tiktok-integration" element={<TikTokIntegration />} />
                     <Route path="/tiktok/callback" element={<TikTokCallback />} />
                     <Route path="/tiktok/callback/" element={<TikTokCallback />} />
-                    <Route path="/trading" element={<TradingHub />} />
-                    <Route path="/trading/calculator" element={<TradingCalculator />} />
-                    <Route path="/trading/journal" element={<TradingJournal />} />
-                    <Route path="/trading/guides" element={<TradingGuides />} />
-                    <Route path="/trading/guides/:slug" element={<TradingGuides />} />
                 </Routes>
             </main>
             <footer className="footer" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', background: 'rgba(255,255,255,0.015)', padding: '4rem 0 2rem' }}>
@@ -70,21 +61,11 @@ function App() {
                                 <a href="/comparatifs" style={{ color: '#a78bfa', fontSize: '0.82rem', textDecoration: 'none', fontWeight: 600 }}>View All Tools →</a>
                             </div>
                         </div>
-                        {/* Trading */}
-                        <div>
-                            <h4 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#94a3b8', marginBottom: '1rem' }}>Trading</h4>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                                <a href="/trading" style={{ color: '#64748b', fontSize: '0.82rem', textDecoration: 'none' }}>Trading Hub</a>
-                                <a href="/trading/calculator" style={{ color: '#64748b', fontSize: '0.82rem', textDecoration: 'none' }}>Position Calculator</a>
-                                <a href="/trading/journal" style={{ color: '#64748b', fontSize: '0.82rem', textDecoration: 'none' }}>Trade Journal</a>
-                                <a href="/trading/guides" style={{ color: '#34d399', fontSize: '0.82rem', textDecoration: 'none', fontWeight: 600 }}>Trading Guides →</a>
-                            </div>
-                        </div>
                     </div>
                     {/* Affiliate Disclosure */}
                     <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.5rem', textAlign: 'center' }}>
                         <p style={{ color: '#475569', fontSize: '0.72rem', lineHeight: 1.7, maxWidth: '700px', margin: '0 auto 0.75rem' }}>
-                            <strong>Affiliate Disclosure:</strong> TechPrism participates in affiliate programs from OKX, TradingView, Hostinger, DigitalOcean, and other companies. Some links on this site are affiliate links — purchases made through these links support our work at no extra cost to you.
+                            <strong>Affiliate Disclosure:</strong> TechPrism participates in affiliate programs from Hostinger, DigitalOcean, and other companies. Some links on this site are affiliate links — purchases made through these links support our work at no extra cost to you.
                         </p>
                         <p style={{ fontSize: '0.78rem', marginBottom: '0.5rem' }}>
                             <a href="/terms.html" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '1.5rem' }}>Terms of Service</a>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Terminal, Shield, Zap, ArrowRight, Code, Cpu, Database, Video, TrendingUp, BarChart3, Bot } from 'lucide-react';
+import { Terminal, Shield, Zap, ArrowRight, Code, Cpu, Database, Video } from 'lucide-react';
 import ProductsGrid from '../components/ProductsGrid';
 import TopPicks from '../components/TopPicks';
 
@@ -8,16 +8,15 @@ const fadeUp = { initial: { opacity: 0, y: 28 }, animate: { opacity: 1, y: 0 }, 
 const stagger = { animate: { transition: { staggerChildren: 0.1 } } };
 
 const stats = [
-    { label: 'Live Bot', value: '24/7', icon: Bot },
+    { label: 'Daily Deals', value: '24/7', icon: Zap },
     { label: 'AI Tools', value: '13+', icon: Cpu },
-    { label: 'Strategies', value: '4', icon: BarChart3 },
     { label: 'Trust Score', value: '4.8/5', icon: Shield },
 ];
 
 const capabilities = [
-    { title: 'Algorithmic Trading Bot', desc: 'Our EMA Crossover v3 bot trades BTC & ETH 24/7 with 12-point signal scoring, 4H multi-timeframe confirmation, and smart position sizing.', icon: TrendingUp, href: '/trading' },
+    { title: 'Curated Deals Tracker', desc: 'Our automated deal scouts find the best discounts on hardware, smart home sensors, and coding tools 24/7.', icon: Zap, href: '/' },
     { title: 'AI-Powered Tools', desc: 'Curated directory of the best AI tools for content creation, SEO, design, and marketing — all tested and reviewed by our team.', icon: Cpu, href: '/comparatifs' },
-    { title: 'Trading Guides & Education', desc: 'From EMA crossovers to risk management — our guides teach you the strategies behind the bot so you can trade smarter.', icon: BarChart3, href: '/trading/guides' },
+    { title: 'Implementation Guides', desc: 'Detailed walkthroughs on how to leverage the newest tech and AI tools to save time and scale your workflow.', icon: Code, href: '/blog' },
 ];
 
 function Home() {
@@ -43,11 +42,11 @@ function Home() {
                     </motion.h1>
 
                     <motion.p variants={fadeUp} style={{ fontSize: 'clamp(1rem, 2.5vw, 1.35rem)', color: '#94a3b8', maxWidth: '40rem', marginBottom: '3rem', fontWeight: 300, lineHeight: 1.7, textAlign: 'center' }}>
-                        Tech tools, AI reviews, and a live crypto trading bot — all in one platform. Discover, trade, and grow.
+                        Tech deals, AI reviews, and a curated selection of digital innovation guides. Discover, build, and grow.
                     </motion.p>
 
                     <motion.div variants={fadeUp} className="hero-actions">
-                        <a href="/trading" className="hero-btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>Trading Hub <TrendingUp size={20} /></a>
+                        <button onClick={() => window.scrollTo({top: 800, behavior: 'smooth'})} className="hero-btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}>View Deals <Zap size={20} /></button>
                         <Link to="/comparatifs" className="hero-btn-secondary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>AI Tools <Code size={20} /></Link>
                     </motion.div>
                 </div>
@@ -301,7 +300,7 @@ function Home() {
                     <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
                         <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, letterSpacing: '-0.03em', marginBottom: '1rem' }}>What We Do</h2>
                         <p style={{ color: '#94a3b8', maxWidth: '32rem', margin: '0 auto', fontSize: '1.05rem', fontWeight: 300 }}>
-                            Combining <span style={{ color: '#34d399', fontWeight: 500 }}>automated trading</span> with curated <span style={{ color: '#a78bfa', fontWeight: 500 }}>tech tools</span> to grow your digital edge.
+                            Curating the absolute best <span style={{ color: '#34d399', fontWeight: 500 }}>daily deals</span> and <span style={{ color: '#a78bfa', fontWeight: 500 }}>tech tools</span> to grow your digital edge.
                         </p>
                     </div>
                     <div className="capabilities-grid">
@@ -328,8 +327,8 @@ function Home() {
                         <p style={{ color: '#94a3b8', fontSize: '1.1rem', marginBottom: '2.5rem', fontWeight: 300, maxWidth: '30rem', margin: '0 auto 2.5rem', position: 'relative', zIndex: 1 }}>
                             Join the next generation of digital pioneers scaling their infrastructure with precision tools.
                         </p>
-                        <button className="hero-btn-primary" style={{ position: 'relative', zIndex: 1 }} onClick={() => window.location.href='/trading'}>
-                            Explore The Bot <TrendingUp size={18} />
+                        <button className="hero-btn-primary" style={{ position: 'relative', zIndex: 1, border: 'none', cursor: 'pointer', fontFamily: 'inherit' }} onClick={() => window.location.href='/comparatifs'}>
+                            Explore AI Tools <Code size={18} />
                         </button>
                     </motion.div>
                 </div>
