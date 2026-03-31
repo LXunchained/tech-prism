@@ -6,8 +6,6 @@ import BlogPost from './pages/BlogPost'
 import GoRedirect from './pages/GoRedirect'
 import Comparatifs from './pages/Comparatifs'
 import ReviewDetail from './pages/ReviewDetail'
-import TikTokIntegration from './pages/TikTokIntegration'
-import TikTokCallback from './pages/TikTokCallback'
 import ExitIntentPopup from './components/ExitIntentPopup'
 import BrandPage from './pages/BrandPage'
 
@@ -26,9 +24,6 @@ function App() {
                     <Route path="/go/:slug" element={<GoRedirect />} />
                     <Route path="/comparatifs" element={<Comparatifs />} />
                     <Route path="/reviews/:slug" element={<ReviewDetail />} />
-                    <Route path="/tiktok-integration" element={<TikTokIntegration />} />
-                    <Route path="/tiktok/callback" element={<TikTokCallback />} />
-                    <Route path="/tiktok/callback/" element={<TikTokCallback />} />
                 </Routes>
             </main>
             <footer className="footer" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', background: 'rgba(255,255,255,0.015)', padding: '4rem 0 2rem' }}>
