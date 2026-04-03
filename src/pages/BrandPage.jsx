@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import ProductsGrid from '../components/ProductsGrid';
+import VIPCampaignBanner from '../components/VIPCampaignBanner';
 
 const fadeUp = { initial: { opacity: 0, y: 28 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } };
 const stagger = { animate: { transition: { staggerChildren: 0.1 } } };
@@ -35,6 +36,9 @@ function BrandPage({ brand, title, subtitle, color, glowStart, glowEnd }) {
                     </motion.p>
                 </div>
             </motion.section>
+
+            {/* VIP Promoted Deal */}
+            <VIPCampaignBanner brandFilter={brand} />
 
             {/* Products grid filtered to brand */}
             <div style={{ position: 'relative', zIndex: 10 }}>

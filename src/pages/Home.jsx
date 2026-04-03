@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Terminal, Shield, Zap, ArrowRight, Code, Cpu, Database, Video } from 'lucide-react';
 import ProductsGrid from '../components/ProductsGrid';
+import VIPCampaignBanner from '../components/VIPCampaignBanner';
 import TopPicks from '../components/TopPicks';
 
 const fadeUp = { initial: { opacity: 0, y: 28 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } };
@@ -66,6 +67,9 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* VIP Promoted Deal */}
+            <VIPCampaignBanner />
 
             {/* Products */}
             <div style={{ position: 'relative', zIndex: 10 }}><ProductsGrid /></div>
